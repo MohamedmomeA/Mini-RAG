@@ -32,3 +32,10 @@ export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
 ```bash
 $ pip install -r requirements.txt
 ```
+
+### setup the environment variables
+```bash
+$ cp .env.example .env
+```
+
+Setup your enivronment in `.env` file like SECRET_KEY value
