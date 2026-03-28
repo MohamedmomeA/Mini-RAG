@@ -30,7 +30,7 @@ export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
 ### Install the required packages
 
 ```bash
-$ pip install -r requirements.txt
+$ pip install -r requirments.txt
 ```
 
 ### setup the environment variables
@@ -39,3 +39,11 @@ $ cp .env.example .env
 ```
 
 Setup your enivronment in `.env` file like SECRET_KEY value
+
+
+## run the fastapi server
+
+```bash
+$ uvicorn main:app --reload --host 0.0.0.0 --port 5000
+```
+
