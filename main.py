@@ -1,8 +1,10 @@
-from fastapi import FastAPI as fp
+from fastapi import FastAPI
+from dotenv import load_dotenv
+load_dotenv(".env")
 
-app = fp()
+from routes import base
 
-@app.get("/great me")
-def greating():
-    return {"Message": "Hello World"}
+app = FastAPI()
 
+
+app.include_router(base.base_route)
