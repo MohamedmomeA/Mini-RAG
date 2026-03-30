@@ -1,4 +1,5 @@
-from fastapi import FastAPI, APIRouter 
+from fastapi import FastAPI, APIRouter, Depends
+from helpers.config import get_setting, Settings
 import os
 
 
@@ -8,9 +9,10 @@ base_route = APIRouter(
 )
 
 @base_route.get("/")
-async def greating():
-    app_name = os.getenv("APP_NAME")
-    App_Version = os.getenv("APP_VERSION")
+async def greating(app_settings: Settings = Depends(get_setting)):
+    # app_settings = get_setting()
+    app_name = app_settings.APP_NAME
+    App_Version = app_settings.APP_VERSION
 
     return {
         "Message": "Hello World",
